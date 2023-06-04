@@ -7,16 +7,23 @@ const { CLIENT_RENEG_LIMIT } = require("tls");
 //     res.end();
 // })
 
-const server = http.createServer((req, res)=>{
-    usuario = {
-        user: "Danny Vinueza",
-        email: "danny.vinueza@epn.edu.ec"
-    }
+// const server = http.createServer((req, res)=>{
+//     usuario = {
+//         user: "Danny Vinueza",
+//         email: "danny.vinueza@epn.edu.ec"
+//     }
 
-    res.setHeader('Content-Type', 'application/json');
-    res.write(JSON.stringify(usuario));
-    res.end();
+//     res.setHeader('Content-Type', 'application/json');
+//     res.write(JSON.stringify(usuario));
+//     res.end();
+// })
+
+const express = require('express')
+const app = express()
+
+app.get('/',(req,res)=>{
+    res.send("Hola Danny Vinueza utilizando express")
 })
 
-server.listen(4040);
+app.listen(4040);
 console.log("Servidor ejecutandose OK");
